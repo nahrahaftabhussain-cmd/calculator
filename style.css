@@ -1,0 +1,178 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #101827, #263852);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 440px;
+    padding: 22px;
+    background: #172234;
+    border: 1px solid #34445b;
+    border-radius: 22px;
+    box-shadow: 0 20px 50px #0005;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+header p {
+    color: #9eafc7;
+    font-size: 14px;
+}
+
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tab {
+    flex: 1;
+    background: #29384d;
+    color: #dce7f7;
+    border-radius: 10px;
+}
+
+.tab.active {
+    background: #3984f5;
+    color: white;
+}
+
+.screen {
+    background: #0b1220;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    min-height: 94px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#history {
+    min-height: 20px;
+    text-align: right;
+    color: #91a4c0;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+#display {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    text-align: right;
+    font-size: 32px;
+    margin-top: 8px;
+}
+
+.angle-row {
+    justify-content: space-between;
+    align-items: center;
+    color: #b6c5d9;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.angle-row:not([hidden]) {
+    display: flex;
+}
+
+#angleMode {
+    background: #344760;
+    color: white;
+    padding: 8px 15px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 9px;
+}
+
+button {
+    min-width: 0;
+    min-height: 52px;
+    border: none;
+    border-radius: 10px;
+    background: #29384d;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+}
+
+button:hover {
+    background: #40536e;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button.utility {
+    background: #42536a;
+}
+
+button.operator {
+    background: #b66a27;
+}
+
+button.scientific {
+    background: #263d5b;
+    color: #7fc6ff;
+}
+
+button.equal {
+    background: #25855d;
+}
+
+footer {
+    text-align: center;
+    color: #91a4c0;
+    font-size: 12px;
+    margin-top: 18px;
+}
+
+@media (max-width: 380px) {
+    .calculator {
+        padding: 14px;
+    }
+
+    .buttons {
+        gap: 6px;
+    }
+
+    button {
+        min-height: 46px;
+        font-size: 15px;
+    }
+
+    #display {
+        font-size: 26px;
+    }
+}
